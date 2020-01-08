@@ -1,0 +1,10 @@
+{
+  "libraryApp": {
+    "Genre": {
+      "null": "",
+      "SCIENCE": "SCIENCE",
+      "FANTASY": "FANTASY",
+      "THRILLER": "THRILLER"
+    }
+  }
+}

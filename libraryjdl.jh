@@ -2,7 +2,7 @@ entity LibraryAccount {
 	name String
 }
 
-entity User {
+entity LibUser {
 	username String,
     firstName String,
     lastName String,
@@ -35,11 +35,11 @@ enum Genre {
 
 
 relationship OneToMany {
-	LibraryAccount to User
+	LibraryAccount to LibUser 
 }
 
 relationship OneToOne {
-	User to RentingList
+	LibUser to RentingList
 }
 
 relationship ManyToMany{

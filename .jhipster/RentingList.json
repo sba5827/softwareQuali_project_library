@@ -1,0 +1,38 @@
+{
+    "name": "RentingList",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "book",
+            "otherEntityRelationshipName": "rentingList",
+            "relationshipName": "book"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "libUser",
+            "otherEntityRelationshipName": "rentingList",
+            "relationshipName": "libUser",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200108210908",
+    "entityTableName": "renting_list",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
