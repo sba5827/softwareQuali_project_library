@@ -1,0 +1,33 @@
+{
+    "name": "LibraryAccount",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "libUser",
+            "otherEntityRelationshipName": "libraryAccount",
+            "relationshipName": "libUser"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "book",
+            "otherEntityRelationshipName": "libraryAccount",
+            "relationshipName": "book"
+        }
+    ],
+    "changelogDate": "20200128092902",
+    "entityTableName": "library_account",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

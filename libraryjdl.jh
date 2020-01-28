@@ -1,0 +1,55 @@
+entity LibraryAccount {
+	name String
+}
+
+entity LibUser {
+	username String,
+    firstName String,
+    lastName String,
+    email String,
+}
+
+entity Book {
+	title String,
+	isbn String,
+	authorToken String,
+	genre Genre,
+    year String,
+	rented Boolean
+}
+
+entity Author {
+	authorToken String,
+    firstName String,
+    lastName String,
+}
+
+entity RentingList {
+	title String,
+	description String
+}
+
+enum Genre {
+    SCIENCE, FANTASY, THRILLER
+}
+
+
+relationship OneToMany {
+	LibraryAccount to LibUser 
+}
+
+relationship OneToOne {
+	LibUser to RentingList
+}
+
+relationship ManyToMany{
+	Book to Author
+}
+
+relationship OneToMany{
+	LibraryAccount to Book
+}
+
+relationship OneToMany{
+	RentingList to Book
+}

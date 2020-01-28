@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="book">
+            <h2><span>Book</span> {{book.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{book.title}}</span>
+                </dd>
+                <dt><span>Isbn</span></dt>
+                <dd>
+                    <span>{{book.isbn}}</span>
+                </dd>
+                <dt><span>Author Token</span></dt>
+                <dd>
+                    <span>{{book.authorToken}}</span>
+                </dd>
+                <dt><span>Genre</span></dt>
+                <dd>
+                    <span>{{book.genre}}</span>
+                </dd>
+                <dt><span>Year</span></dt>
+                <dd>
+                    <span>{{book.year}}</span>
+                </dd>
+                <dt><span>Rented</span></dt>
+                <dd>
+                    <span>{{book.rented}}</span>
+                </dd>
+                <dt><span>Author</span></dt>
+                <dd>
+                    <span *ngFor="let author of book.authors; let last = last">
+                        <a [routerLink]="['/author', author?.id, 'view' ]">{{author.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Library Account</span></dt>
+                <dd>
+                    <div *ngIf="book.libraryAccount">
+                        <a [routerLink]="['/library-account', book.libraryAccount?.id, 'view']">{{book.libraryAccount?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Renting List</span></dt>
+                <dd>
+                    <div *ngIf="book.rentingList">
+                        <a [routerLink]="['/renting-list', book.rentingList?.id, 'view']">{{book.rentingList?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/book', book.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
