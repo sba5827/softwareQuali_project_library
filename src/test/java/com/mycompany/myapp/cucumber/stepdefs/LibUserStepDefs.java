@@ -26,8 +26,8 @@ public class LibUserStepDefs extends StepDefs {
         this.restUserMockMvc = MockMvcBuilders.standaloneSetup(libUserResource).build();
     }
 
-    @When("I search LibUser {int}")
-    public void i_search_libuser(int userId) throws Throwable {
+    @When("I search LibUser {String}")
+    public void i_search_libuser(String userId) throws Throwable {
         actions = restUserMockMvc.perform(get("/api/users/" + userId)
                 .accept(MediaType.APPLICATION_JSON));
     }
