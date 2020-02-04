@@ -1,5 +1,5 @@
 Feature: LibUser management
 
     Scenario: Retrieve first LibUser
-        When I search user 1
-        Then the user is found
+        When I search LibUser 1
+        Then the LibUser is found
